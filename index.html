@@ -1,0 +1,1027 @@
+<meta charset="UTF-8">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      chtml: {
+        scale: 0.9,
+        mathmlSpacing: false,
+        exFactor: ".6em",
+        displayAlign: 'left',
+        displayIndent: '2em',
+        matchFontHeight: true,
+        scriptspace: .5,
+        skipAttributes: {},
+        ex: 6,
+        width: 'container',
+        linebreaks: { automatic: true },
+        fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2',
+        adaptiveCSS: true
+      },
+      loader: {
+        load: ['[tex]/ams']
+      }
+    };
+</script>  
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style type="text/css">
+body {
+/*    font-family: "Lato", "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+    font-family: 'Lato', Verdana, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+h1 {
+    font-weight: 300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+a:link,a:visited {
+    color: #1772d0;
+    text-decoration: none;
+}
+a:hover {
+    color: #f09228;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    font-size: 36px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+.paper-title {
+    padding: 16px 0px 16px 0px;
+}
+
+.row, .author-row, .affil-row {
+     overflow: auto;
+}
+.author-row, .affil-row {
+    font-size: 18px;
+    font-weight: 400;
+}
+.authors {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 16px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    /*font-style: italic;*/
+    color: #666;
+    text-align: left;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+video {
+    display: block;
+    margin: auto;
+}
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #1367a7;
+  color: #ecf0f1 !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+/*.supp-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #1367a7;
+  color: #ecf0f1 !important;
+  font-size: 20px;
+  width: 150px;
+  font-weight: 600;
+}
+.supp-btn:hover {
+    opacity: 0.85;
+}*/
+
+.supp-btn {
+  background-color: #fff;
+  border: 1.5px solid #000;
+  color: #000 !important;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  letter-spacing: 1px;
+  margin: 8px;
+  padding: 8px 8px;
+  width: 150px;
+  font-weight: 400;
+}
+.supp-btn:hover {
+  background-color: #000;
+  color: #fff !important;
+}
+
+.supp-btn-wide {
+    background-color: #fff;
+    border: 1.5px solid #000;
+    color: #000 !important;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin: 8px;
+    padding: 8px 8px;
+    width: 250px;
+    font-weight: 400;
+  }
+  .supp-btn-wide:hover {
+    background-color: #000;
+    color: #fff !important;
+  }
+  
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.venue {
+/*    color: #1367a7;*/
+    color: #111;
+    font-weight: 400;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #EEEEEE;
+}
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.one {
+  position: relative;
+}
+.two {
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl; /* vertical right-to-left */
+  transform: rotate(180deg); /* optional: flip the text to make it read from top to bottom */
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* adjust the gap between images here */
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* This ensures a square aspect ratio */
+    overflow: hidden; /* This ensures that the image won't go outside the container */
+    display: flex;
+    justify-content: center; /* centers horizontally, if needed */
+    align-items: center; /* centers vertically */
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.2s;
+}
+
+.image-container .default-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.image-container .hover-image {
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none; /* ensures the invisible image doesn't capture mouse events */
+}
+
+.row:hover .hover-image {
+    opacity: 1;
+}
+
+.column-header {
+    grid-column-end: span 1; /* This makes sure that the header only spans one column */
+    /* Style the headers as needed */
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+.small-caps {
+    text-transform: uppercase; /* Capitalizes the text */
+    font-size: 0.8em;          /* Reduces the font size */
+    display: inline;
+}
+hr {
+    margin-bottom: 10px;
+}
+
+
+.prev-black {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.next-black {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+</style>
+
+
+
+<!-- <div class="topnav" id="myTopnav">
+  <a href="https://www.nvidia.com/"><img width="100%" src="https://nv-tlabs.github.io/flexicubes_website/nvidia.svg"></a>
+  <a href="https://nv-tlabs.github.io/" ><strong>Toronto AI Lab</strong></a>
+  <a href="https://www.nvidia.com/en-us/research/" ><strong>NVIDIA Research</strong></a>
+</div> -->
+
+<div class="container"><div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">3DGRT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#paper_link">Paper <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#abstract">Abstract <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#supp_video">Video</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Results">Results</a>
+        </li>
+        </ul>
+        <span class="navbar-text">
+            Fast Tracing of Particle Scenes
+        </span>
+    </div>
+    </nav>
+</div></div>
+
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700,300italic,400italic,500italic,600italic,700italic' rel='stylesheet' type='text/css'>
+
+<head>
+    <title>3DGRT</title>
+    <meta property="og:description" content="3D Gaussian Ray Tracing: Fast Tracing of Particle Scenes"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141699104-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-141699104-1');
+    </script>
+
+    <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+    ></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+    />
+    <style>
+        .before,
+        .after {
+          margin: 0;
+        }
+      
+        .before figcaption,
+        .after figcaption {
+          background: #fff;
+          border: 1px solid #c0c0c0;
+          border-radius: 12px;
+          color: #2e3452;
+          opacity: 0.8;
+          padding: 12px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          line-height: 100%;
+        }
+      
+        .before figcaption {
+          left: 12px;
+        }
+      
+        .after figcaption {
+          right: 12px;
+        }
+      </style>
+</head>
+
+
+<body>
+
+<div class="container pt-3">
+    <div class="row">
+        <h1><b>3D Gaussian Ray Tracing: </b>Fast Tracing of Particle Scenes</h1>
+    </div>
+</div>
+
+<div class="container">
+    
+    <div id="authors">
+
+        <div style="clear: both" id="paper_link">
+            <div class="paper-btn-parent">
+            <a class="supp-btn btn" href="res/3DGRT_Anonymous_LQ.pdf" target="_blank">
+                <span class="material-icons"> description </span> 
+                 Paper
+            </a>
+            <a class="supp-btn btn" href="#supp_video">
+                <span class="material-icons"> play_circle </span> 
+                 Video
+            </a>
+            </div>
+    </div>
+
+    <div class="container">
+        <video class="rounded"  width="100%"  muted loop autoplay>
+            <source src="res/teaser/bicycle_morph.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+    <section id="abstract" class="container">
+        <h2>Abstract</h2>
+        <hr>
+        <p class="text-justify">
+            Particle-based representations of radiance fields such as 3D Gaussian Splatting, have found great success for reconstructing and re-rendering of complex scenes.
+            Most existing methods render particles via rasterization, projecting them to screen space tiles for processing in a sorted order.
+            This work instead considers ray tracing the particles, building a bounding volume hierarchy and casting a ray for each pixel using high-performance GPU ray tracing hardware.
+            To efficiently handle large numbers of semi-transparent particles, we describe a specialized rendering algorithm which encapsulates particles with bounding meshes to leverage fast ray-triangle intersections, and shades batches of intersections in depth-order. 
+            The benefits of ray tracing are well-known in computer graphics: processing incoherent rays for secondary lighting effects such as shadows and reflections, rendering from highly-distorted cameras common in robotics, stochastically sampling rays, and more.
+            With our renderer, this flexibility comes at little cost compared to rasterization. Experiments demonstrate the speed and accuracy of our approach, as well as several applications in computer graphics and vision.
+            We further propose related improvements to basic Gaussian representation, including a simple use of generalized kernel functions which significantly reduces particle hit counts.
+
+            <div class="flex-row">
+                <figure style="width: 100%;">
+                    <a href="./res/method_figure.jpg" class="toobig">
+                        <img width="100%" src="./res/method_figure.jpg">
+                    </a>
+                </figure>
+            </div>
+    </section>
+        
+
+    <div id="teaser-videos" class="container">
+        <div class="flex-row">
+        </div>
+        <p class="caption" style="margin-bottom: 3px; text-align: justify;">
+            Given a set of 3D particles, we first build the corresponding bounding primitives and insert them into a BVH. To compute the incoming radiance along each ray, we trace rays against the BVH to get the next k particles. We then compute the intersected particles' response and accumulate the radiance. The process repeats until all particles have been evaluated or the transmittance meets a predefined threshold and the final rendering is returned.
+        </p>
+        
+    </div>
+
+
+    <br>
+    <div class="container" id="supp_video">
+        <div class="teaser-image">
+                <video width="100%" style="aspect-ratio: 16/9;" controls class="rounded">
+                    <source src="res/3dgrt_supplementary_video.mp4" type="video/mp4">
+                </video>
+        </div>
+    </div>
+
+    <div id="Results" class="container pt-2">
+    <div class="row">
+        <h2>Novel view synthesis</h2>
+    </div>
+    <hr>
+    </div>
+
+    <div class="container">
+        <div class="row"><div class="col">
+            <p class="text-justify">For the task of novel view synthesis, our method performs on par with or slightly better than 3D Gaussian Splatting and other state-of-the-art methods in terms of quality.</p>
+        </div></div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col col-6">
+                <p style="text-align: center;">Real Scenes</p>
+                <div id="carouselReal" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/bicycle.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/bicycle.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/counter.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/counter.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/stump.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/stump.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/garden.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/garden.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/kitchen.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/kitchen.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/bonsai.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/bonsai.mp4">high-quality video</a></div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselReal" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselReal" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col col-6">
+                <p style="text-align: center;">Synthetic Scenes</p>
+                <div id="carouselSynthetic" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/chair.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/chair.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/drums.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/drums.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/ficus.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/ficus.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/hotdog.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/hotdog.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/lego.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/lego.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/materials.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/materials.mp4">high-quality video</a></div>
+                        </div>
+                        <div class="carousel-item">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/our_trajectory_renderings/mic.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="w-100 text-center"><a href="res/our_trajectory_renderings_hq/mic.mp4">high-quality video</a></div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselSynthetic" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon prev-black" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselSynthetic" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon next-black" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <section class="container">
+        <h2>Comparison to 3D Gaussian Splatting (3DGS)</h2>
+        <hr>
+    </section>
+
+    <div class="container justify-content-center">
+        <div class="row">
+            <div class="col col-6 rounded">
+                <img-comparison-slider>
+                    <figure slot="first" class="before rounded">
+                        <img width="100%" src="res/comparisons/stump_3dgs.png" class="rounded">
+                        <figcaption>3DGS</figcaption>
+                    </figure>
+                    <figure slot="second" class="after rounded">
+                        <img width="100%" src="res/comparisons/stump_ours.png" class="rounded">
+                        <figcaption>Ours</figcaption>
+                    </figure>
+                </img-comparison-slider>
+            </div>
+            <div class="col col-6 rounded">
+                <img-comparison-slider>
+                    <figure slot="first" class="before rounded">
+                        <img width="100%" src="res/comparisons/bicycle_3dgs.png" class="rounded">
+                        <figcaption>3DGS</figcaption>
+                    </figure>
+                    <figure slot="second" class="after rounded">
+                        <img width="100%" src="res/comparisons/bicycle_ours.png" class="rounded">
+                        <figcaption>Ours</figcaption>
+                    </figure>
+                </img-comparison-slider>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <section class="container">
+        <h2>Training w/ Undistorted Views (Pinhole) vs. Original Views (Fisheye)</h2>
+        <hr>
+    </section>
+
+    <div class="container">
+        <div class="row"><div class="col">
+            <p class="text-justify">As mentioned throughout our paper, unlike rasterization, ray tracing does not require perfect pinhole cameras for supervising scenes. Instead, ray tracing supports training with other distorted camera models. This allows us to eliminate the rectification step used in the preprocessing stage of 3D Gaussian Splatting, leading to higher quality outputs by supervising on all available pixels rather than just a subset in the rectified cameras. Below, we compare training our model on two scenes from the ZipNeRF dataset: once using the undistorted (pinhole) views, and once using the original fisheye cameras. The results clearly show that training with the original distorted views produces higher quality outputs.</p>
+        </div></div>
+    </div>
+
+    <div class="container justify-content-center pb-3 pt-3">
+        <div class="row"><h5 class="col">Testing on distorted views:</h5></div>
+        <div class="row justify-content-center">
+            <div class="col col-6 rounded">
+                <img-comparison-slider>
+                    <figure slot="first" class="before rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00008_train_undistorted.png" class="rounded">
+                        <figcaption>Pinhole</figcaption>
+                    </figure>
+                    <figure slot="second" class="after rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00008_train_distorted.png" class="rounded">
+                        <figcaption>Fisheye</figcaption>
+                    </figure>
+                </img-comparison-slider>
+            </div>
+            <div class="col col-6 rounded">
+                <img-comparison-slider>
+                    <figure slot="first" class="before rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00203_train_undistorted.png" class="rounded">
+                        <figcaption>Pinhole</figcaption>
+                    </figure>
+                    <figure slot="second" class="after rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00203_train_distorted.png" class="rounded">
+                        <figcaption>Fisheye</figcaption>
+                    </figure>
+                </img-comparison-slider>
+            </div>
+        </div>
+
+        <div class="row pt-3"><h5 class="col">Testing on undistorted views:</h5></div>
+        <div class="row justify-content-center">
+            <div class="col col-6 rounded justify-content-center">
+                <img-comparison-slider>
+                    <figure slot="first" class="before rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00008_train_undistorted_test_undistorted.png" class="rounded">
+                        <figcaption>Pinhole</figcaption>
+                    </figure>
+                    <figure slot="second" class="after rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00008_train_distorted_test_undistorted.png" class="rounded">
+                        <figcaption>Fisheye</figcaption>
+                    </figure>
+                </img-comparison-slider>
+            </div>
+            <div class="col col-6 rounded justify-content-center">
+                <img-comparison-slider>
+                    <figure slot="first" class="before rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00203_train_undistorted_test_undistorted.png" class="rounded">
+                        <figcaption>Pinhole</figcaption>
+                    </figure>
+                    <figure slot="second" class="after rounded">
+                        <img width="100%" src="res/distorted_undistorted_comparison/00203_train_distorted_test_undistorted.png" class="rounded">
+                        <figcaption>Fisheye</figcaption>
+                    </figure>
+                </img-comparison-slider>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <section class="container">
+        <h2>Secondary effects and instancing</h2>
+        <hr>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="text-justify">Efficient ray tracing enables many advanced techniques in computer graphics and vision, such as secondary ray effects like mirrors, refractions, and shadows. It also supports highly distorted cameras with rolling shutter effects and even allows for stochastic sampling of rays.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pb-3 pt-3">
+        <ul class="nav nav-pills mb-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Shadows</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Depth of field</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="fisheye-tab" data-bs-toggle="tab" data-bs-target="#fisheye-rendering" type="button" role="tab" aria-controls="profile" aria-selected="false">Fisheye</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reflections-tab" data-bs-toggle="tab" data-bs-target="#reflections" type="button" role="tab" aria-controls="profile" aria-selected="false">Reflections</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="refractions-tab" data-bs-toggle="tab" data-bs-target="#refractions" type="button" role="tab" aria-controls="profile" aria-selected="false">Refractions</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="instancing-tab" data-bs-toggle="tab" data-bs-target="#instancing" type="button" role="tab" aria-controls="profile" aria-selected="false">Instancing</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <video class="rounded"  width="100%"  muted controls>
+                    <source src="res/applications/playground/shadows.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <video class="rounded"  width="100%"  muted controls>
+                    <source src="res/applications/playground/depth_of_field.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="tab-pane fade" id="fisheye-rendering" role="tabpanel" aria-labelledby="profile-tab">
+                <video class="rounded"  width="100%"  muted controls>
+                    <source src="res/applications/playground/fish_eye.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="tab-pane fade" id="reflections" role="tabpanel" aria-labelledby="profile-tab">
+                <video class="rounded"  width="100%"  muted controls>
+                    <source src="res/applications/playground/reflections.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="tab-pane fade" id="refractions" role="tabpanel" aria-labelledby="profile-tab">
+                <video class="rounded"  width="100%"  muted controls>
+                    <source src="res/applications/playground/refractions.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="tab-pane fade" id="instancing" role="tabpanel" aria-labelledby="profile-tab">
+                <video class="rounded"  width="100%"  muted controls>
+                    <source src="res/applications/instancing.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+          </div>
+    </div>
+
+
+
+    <section class="container">
+        <h2>Supervision from highly-distorted cameras</h2>
+        <hr>
+    </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="text-justify">Compared to rasterization-based approaches, our ray tracing-based method naturally supports complex camera models, such as distorted fisheye lenses. These can be re-rendered using different camera models, like regular perspective cameras, achieving high reconstruction quality relative to unseen references.
+                    Ray tracing also naturally compensates for time-dependent effects like rolling shutter distortions caused by sensor motion. This effect is shown on an example below of a single solid box rendered by a left-and-right-panning rolling shutter camera with a top-to-bottom shutter direction. By incorporating time-dependent per-pixel poses in the reconstruction, our method accurately recovers the true undistorted geometry.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-3">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#fisheye-supervision" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Fisheye</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#rolling-shutter-supervision" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Rolling shutter</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="fisheye-supervision" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-6">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/applications/cozyroom-fisheye-gt.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col-6">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/applications/cozyroom-fisheye-ours.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p style="text-align: center;">Ground Truth</p>
+                        </div>
+                        <div class="col-6">
+                            <p style="text-align: center;">Ours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="rolling-shutter-supervision" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-6">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/applications/rolling-shutter-affected-gt.mkv" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="col-6">
+                            <video class="rounded"  width="100%"  muted loop autoplay>
+                                <source src="res/applications/rolling-shutter-compensated-reconstruction-20frames.mkv" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p style="text-align: center;">Ground Truth (rolling shutter affected)</p>
+                        </div>
+                        <div class="col-6">
+                            <p style="text-align: center;">Ours (rolling shutter compensated)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container">
+        <h2>AV scene reconstruction</h2>
+        <hr>
+    </section>
+
+    <div class="container">
+        <div class="row"><div class="col">
+            <p class="text-justify">Real-world AV and robotics applications often need to account for distorted intrinsic camera models and time-dependent effects like rolling shutter distortions caused by high sensor speeds. Our ray tracing-based reconstruction is well-suited to handle both challenges simultaneously.</p>
+        </div></div>
+        <video class="rounded"  width="100%"  muted controls loop>
+            <source src="res/applications/3dgt_av.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <p style="text-align: center;">Left Camera</p>
+            </div>
+            <div class="col-4">
+                <p style="text-align: center;">Middle Camera</p>
+            </div>
+            <div class="col-4">
+                <p style="text-align: center;">Right Camera</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container">
+        <h2>Large-scale scene</h2>
+        <hr>
+    </section>
+
+    <div class="container">
+        <video class="rounded"  width="100%"  muted loop controls>
+            <source src="res/our_trajectory_renderings/nvidia-hq.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <br>
+
+   
+
+</div>
+
+<script>
+    $('#carouselReal').carousel({interval: 12000});
+    $('#carouselSynthetic').carousel({interval: 12000});
+    $('#carouselDistorted').carousel({interval: 4000});
+    $('#carouselTeaser').carousel({interval: 0});
+
+    $('#carouselReal').on('slide.bs.carousel', function (e) {
+        var $video = $(e.relatedTarget).find('video');
+        if ($video.length) {
+        $video.get(0).currentTime = 0; // Reset video to beginning
+        }
+    });
+
+    $('#carouselSynthetic').on('slide.bs.carousel', function (e) {
+        var $video = $(e.relatedTarget).find('video');
+        if ($video.length) {
+        $video.get(0).currentTime = 0; // Reset video to beginning
+        }
+    });
+
+</script>
+
+<div class="container"><div class="row">
+    <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-text w-100 text-center">
+            3D Gaussian Ray Tracing: Fast Tracing of Particle Scenes
+        </span>
+    </div>
+    </nav>
+</div></div>
+
+</body>
+</html>
+
+
